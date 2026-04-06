@@ -1,29 +1,29 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="bg-primary text-primary-foreground">
-    <div className="container mx-auto px-4 lg:px-8 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div>
-          <h3 className="font-display text-2xl font-bold mb-4">
-            TEXTILE<span className="text-accent">CO</span>
+  <footer className="border-t border-border">
+    <div className="container mx-auto px-6 lg:px-12 py-20">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="md:col-span-2">
+          <h3 className="text-xl tracking-[0.2em] uppercase font-medium text-foreground mb-6">
+            Textile<span className="text-accent font-semibold">Co</span>
           </h3>
-          <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
             Your trusted production partner for premium yarn, garments, home textiles, accessories & gift articles — sourcing worldwide with a focus on design and sustainability.
           </p>
         </div>
 
         <div>
-          <h4 className="font-display text-lg font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm text-primary-foreground/70">
+          <h4 className="text-[13px] tracking-[0.15em] uppercase text-foreground mb-6">Navigation</h4>
+          <ul className="space-y-3 text-sm text-muted-foreground">
             {[
-              { label: "About Us", path: "/about" },
+              { label: "About", path: "/about" },
               { label: "Products", path: "/products" },
               { label: "Infrastructure", path: "/infrastructure" },
-              { label: "Contact Us", path: "/contact" },
+              { label: "Contact", path: "/contact" },
             ].map((l) => (
               <li key={l.path}>
-                <Link to={l.path} className="hover:text-primary-foreground transition-colors">
+                <Link to={l.path} className="hover:text-foreground transition-colors duration-300">
                   {l.label}
                 </Link>
               </li>
@@ -32,11 +32,11 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="font-display text-lg font-semibold mb-4">Product Categories</h4>
-          <ul className="space-y-2 text-sm text-primary-foreground/70">
+          <h4 className="text-[13px] tracking-[0.15em] uppercase text-foreground mb-6">Products</h4>
+          <ul className="space-y-3 text-sm text-muted-foreground">
             {["Yarn", "Garments", "Home Textile", "Accessories", "Gift Articles"].map((c) => (
               <li key={c}>
-                <Link to="/products" className="hover:text-primary-foreground transition-colors">
+                <Link to="/products" className="hover:text-foreground transition-colors duration-300">
                   {c}
                 </Link>
               </li>
@@ -45,7 +45,7 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-xs text-primary-foreground/50">
+      <div className="border-t border-border mt-16 pt-8 text-center text-xs text-muted-foreground tracking-wider">
         © {new Date().getFullYear()} TextileCo. All rights reserved.
       </div>
     </div>

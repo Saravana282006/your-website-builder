@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "About Us", path: "/about" },
+  { label: "About", path: "/about" },
   { label: "Products", path: "/products" },
   { label: "Infrastructure", path: "/infrastructure" },
-  { label: "Contact Us", path: "/contact" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {
@@ -15,19 +15,21 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <Link to="/" className="font-display text-xl font-bold tracking-wide text-primary">
-          TEXTILE<span className="text-accent">CO</span>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
+      <div className="container mx-auto flex items-center justify-between h-20 px-6 lg:px-12">
+        <Link to="/" className="text-xl tracking-[0.2em] uppercase font-medium text-foreground">
+          Textile<span className="text-accent font-semibold">Co</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-accent ${
-                location.pathname === link.path ? "text-accent" : "text-foreground/70"
+              className={`text-[13px] tracking-[0.15em] uppercase transition-colors duration-300 ${
+                location.pathname === link.path
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link.label}
@@ -40,7 +42,7 @@ const Navbar = () => {
           className="md:hidden text-foreground"
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -51,8 +53,10 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               onClick={() => setOpen(false)}
-              className={`block px-6 py-3 text-sm font-medium uppercase tracking-wide border-b border-border/50 transition-colors hover:bg-muted ${
-                location.pathname === link.path ? "text-accent" : "text-foreground/70"
+              className={`block px-8 py-4 text-[13px] tracking-[0.15em] uppercase border-b border-border/30 transition-colors ${
+                location.pathname === link.path
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link.label}
