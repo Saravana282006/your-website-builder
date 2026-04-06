@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Leaf, Palette } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/hero-main.jpg";
 import yarnImg from "@/assets/yarn-category.jpg";
@@ -9,47 +9,41 @@ import accessoriesImg from "@/assets/accessories-category.jpg";
 import giftImg from "@/assets/gift-articles-category.jpg";
 
 const categories = [
-  { title: "Yarn", img: yarnImg, desc: "Premium cotton yarn in various counts and fibre types" },
-  { title: "Garments", img: garmentsImg, desc: "Men's, women's & children's apparel and workwear" },
-  { title: "Home Textile", img: homeTextileImg, desc: "Bed linen, table linen, curtains & cushions" },
-  { title: "Accessories", img: accessoriesImg, desc: "Shawls, pashmina, scarves & wallets" },
+  { title: "Yarn", img: yarnImg, desc: "Premium cotton yarn in various counts" },
+  { title: "Garments", img: garmentsImg, desc: "Men's, women's & children's apparel" },
+  { title: "Home Textile", img: homeTextileImg, desc: "Bed linen, curtains & cushions" },
+  { title: "Accessories", img: accessoriesImg, desc: "Shawls, pashmina & scarves" },
   { title: "Gift Articles", img: giftImg, desc: "Curated textile gift collections" },
-];
-
-const highlights = [
-  { icon: Globe, title: "Worldwide Sourcing", desc: "Global reach with reliable supply chain across continents" },
-  { icon: Leaf, title: "Sustainability", desc: "Eco-friendly practices and certified sustainable production" },
-  { icon: Palette, title: "Design Focus", desc: "Design-led product development for contemporary markets" },
 ];
 
 const Index = () => (
   <Layout>
-    {/* Hero */}
-    <section className="relative h-[85vh] min-h-[600px] flex items-center">
-      <img src={heroImg} alt="Textile manufacturing facility" className="absolute inset-0 w-full h-full object-cover" />
+    {/* Hero — full viewport, minimal */}
+    <section className="relative h-screen flex items-center">
+      <img src={heroImg} alt="Textile manufacturing" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="relative container mx-auto px-4 lg:px-8">
+      <div className="relative container mx-auto px-6 lg:px-12">
         <div className="max-w-2xl animate-fade-up">
-          <p className="text-accent-foreground/80 text-sm uppercase tracking-[0.3em] mb-4 font-medium" style={{ color: 'hsl(35, 30%, 80%)' }}>
+          <p className="text-[13px] tracking-[0.3em] uppercase mb-6 font-medium" style={{ color: 'hsl(0, 0%, 70%)' }}>
             Your Trusted Production Partner
           </p>
-          <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6" style={{ color: 'hsl(40, 30%, 96%)' }}>
+          <h1 className="text-5xl md:text-7xl font-light leading-[1.1] mb-8" style={{ color: 'hsl(0, 0%, 98%)' }}>
             Premium Textiles,<br />Crafted with Purpose
           </h1>
-          <p className="text-lg leading-relaxed mb-8 max-w-lg" style={{ color: 'hsl(35, 20%, 80%)' }}>
+          <p className="text-base leading-relaxed mb-10 max-w-md font-light" style={{ color: 'hsl(0, 0%, 75%)' }}>
             From yarn to finished products — delivering quality garments, home textiles, and accessories to clients worldwide.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 font-semibold text-sm uppercase tracking-wider rounded-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-3.5 text-[13px] uppercase tracking-[0.15em] hover:opacity-90 transition-opacity"
             >
-              Explore Products <ArrowRight size={16} />
+              Explore Products <ArrowRight size={14} />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 border border-secondary/40 px-8 py-3 font-semibold text-sm uppercase tracking-wider rounded-sm hover:bg-secondary/10 transition-colors"
-              style={{ color: 'hsl(40, 30%, 96%)' }}
+              className="inline-flex items-center gap-3 border border-white/30 px-8 py-3.5 text-[13px] uppercase tracking-[0.15em] hover:bg-white/10 transition-colors"
+              style={{ color: 'hsl(0, 0%, 98%)' }}
             >
               Get in Touch
             </Link>
@@ -58,49 +52,44 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Highlights */}
-    <section className="section-gradient py-20">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {highlights.map((h) => (
-            <div key={h.title} className="text-center p-8">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 text-accent mb-5">
-                <h.icon size={28} />
-              </div>
-              <h3 className="font-display text-xl font-semibold mb-3 text-foreground">{h.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{h.desc}</p>
-            </div>
-          ))}
-        </div>
+    {/* Value Prop — clean text section */}
+    <section className="py-28">
+      <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center">
+        <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-6">Why Us</p>
+        <h2 className="text-3xl md:text-4xl font-light text-foreground leading-snug mb-6">
+          Global sourcing. Sustainable practices.<br />Design-led production.
+        </h2>
+        <div className="divider mb-6" />
+        <p className="text-muted-foreground leading-relaxed">
+          We span the complete textile value chain — from spinning premium yarn to delivering finished garments and home textiles. Our commitment to quality, sustainability, and design sets us apart.
+        </p>
       </div>
     </section>
 
-    {/* Product Categories */}
-    <section className="py-20">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">Our Product Range</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">Comprehensive textile solutions from raw yarn to finished products</p>
+    {/* Product Categories — grid */}
+    <section className="pb-28">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16">
+          <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">Products</p>
+          <h2 className="text-3xl md:text-4xl font-light text-foreground">Our Product Range</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map((cat, i) => (
             <Link
               key={cat.title}
               to="/products"
-              className={`group relative overflow-hidden rounded-lg ${i === 0 ? "sm:col-span-2 lg:col-span-2" : ""}`}
+              className={`group relative overflow-hidden ${i === 0 ? "sm:col-span-2 lg:col-span-2 h-96" : "h-80"}`}
             >
-              <div className={`${i === 0 ? "h-80" : "h-72"}`}>
-                <img
-                  src={cat.img}
-                  alt={cat.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="font-display text-xl font-bold mb-1" style={{ color: 'hsl(40, 30%, 96%)' }}>{cat.title}</h3>
-                <p className="text-sm" style={{ color: 'hsl(35, 20%, 80%)' }}>{cat.desc}</p>
+              <img
+                src={cat.img}
+                alt={cat.title}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 p-8">
+                <h3 className="text-2xl font-light mb-1" style={{ color: 'hsl(0, 0%, 98%)' }}>{cat.title}</h3>
+                <p className="text-sm font-light" style={{ color: 'hsl(0, 0%, 70%)' }}>{cat.desc}</p>
               </div>
             </Link>
           ))}
@@ -109,17 +98,17 @@ const Index = () => (
     </section>
 
     {/* CTA */}
-    <section className="bg-primary py-20">
-      <div className="container mx-auto px-4 lg:px-8 text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Partner With Us?</h2>
-        <p className="text-primary-foreground/70 max-w-lg mx-auto mb-8">
+    <section className="bg-foreground py-24">
+      <div className="container mx-auto px-6 lg:px-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-light text-background mb-4">Ready to Partner With Us?</h2>
+        <p className="text-background/50 max-w-md mx-auto mb-10 font-light">
           Let's discuss how we can fulfill your textile sourcing needs with quality and reliability.
         </p>
         <Link
           to="/contact"
-          className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-10 py-4 font-semibold text-sm uppercase tracking-wider rounded-sm hover:opacity-90 transition-opacity"
+          className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-10 py-4 text-[13px] uppercase tracking-[0.15em] hover:opacity-90 transition-opacity"
         >
-          Contact Us <ArrowRight size={16} />
+          Contact Us <ArrowRight size={14} />
         </Link>
       </div>
     </section>

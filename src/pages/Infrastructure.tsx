@@ -1,13 +1,12 @@
-import { Factory, Gauge, Cog, Warehouse } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/infrastructure-hero.jpg";
 import heroMainImg from "@/assets/hero-main.jpg";
 
 const stats = [
-  { icon: Factory, label: "Spindles", value: "50,000+", desc: "High-speed ring & open-end spindles" },
-  { icon: Gauge, label: "Daily Output", value: "25 Tons", desc: "Daily yarn production capacity" },
-  { icon: Cog, label: "Looms", value: "200+", desc: "Modern weaving & knitting machines" },
-  { icon: Warehouse, label: "Facility", value: "2,00,000 sq ft", desc: "Total manufacturing space" },
+  { label: "Spindles", value: "50,000+", desc: "High-speed ring & open-end" },
+  { label: "Daily Output", value: "25 Tons", desc: "Daily yarn production" },
+  { label: "Looms", value: "200+", desc: "Modern weaving machines" },
+  { label: "Facility", value: "2,00,000 sq ft", desc: "Manufacturing space" },
 ];
 
 const facilities = [
@@ -19,31 +18,26 @@ const facilities = [
 const Infrastructure = () => (
   <Layout>
     {/* Hero */}
-    <section className="relative h-[50vh] min-h-[400px] flex items-center">
+    <section className="relative h-[60vh] min-h-[500px] flex items-center">
       <img src={heroImg} alt="Manufacturing infrastructure" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="relative container mx-auto px-4 lg:px-8">
+      <div className="relative container mx-auto px-6 lg:px-12">
         <div className="max-w-xl animate-fade-up">
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: 'hsl(40, 30%, 96%)' }}>Infrastructure</h1>
-          <p className="text-lg" style={{ color: 'hsl(35, 20%, 80%)' }}>
-            World-class manufacturing facilities powering our commitment to quality
-          </p>
+          <p className="text-[13px] tracking-[0.3em] uppercase mb-4" style={{ color: 'hsl(0, 0%, 70%)' }}>Capabilities</p>
+          <h1 className="text-4xl md:text-6xl font-light" style={{ color: 'hsl(0, 0%, 98%)' }}>Infrastructure</h1>
         </div>
       </div>
     </section>
 
     {/* Stats */}
-    <section className="py-16 bg-primary">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-20 bg-foreground">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-foreground/10 text-primary-foreground mb-3">
-                <s.icon size={24} />
-              </div>
-              <div className="font-display text-3xl font-bold text-primary-foreground">{s.value}</div>
-              <div className="text-sm font-semibold text-primary-foreground/80 mt-1">{s.label}</div>
-              <div className="text-xs text-primary-foreground/60 mt-1">{s.desc}</div>
+              <div className="text-4xl md:text-5xl font-light mb-2" style={{ color: 'hsl(0, 0%, 98%)' }}>{s.value}</div>
+              <div className="text-[13px] tracking-[0.15em] uppercase mb-1" style={{ color: 'hsl(28, 60%, 55%)' }}>{s.label}</div>
+              <div className="text-xs" style={{ color: 'hsl(0, 0%, 55%)' }}>{s.desc}</div>
             </div>
           ))}
         </div>
@@ -51,24 +45,25 @@ const Infrastructure = () => (
     </section>
 
     {/* Facilities */}
-    <section className="py-20">
-      <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="font-display text-3xl font-bold text-foreground text-center mb-14">Our Facilities</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="py-28">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16">
+          <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">Facilities</p>
+          <h2 className="text-3xl md:text-4xl font-light text-foreground">Our Manufacturing Units</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {facilities.map((f) => (
-            <div key={f.title} className="group overflow-hidden rounded-lg border border-border">
-              <div className="h-56 overflow-hidden">
+            <div key={f.title} className="group">
+              <div className="overflow-hidden mb-6">
                 <img
                   src={f.img}
                   alt={f.title}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">{f.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
-              </div>
+              <h3 className="text-xl text-foreground mb-2">{f.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

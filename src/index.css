@@ -2,42 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
-    --foreground: 30 10% 15%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 40 25% 97%;
-    --card-foreground: 30 10% 15%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 40 20% 98%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 25 45% 28%;
-    --primary-foreground: 40 30% 96%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 35 30% 90%;
-    --secondary-foreground: 25 45% 28%;
+    --secondary: 40 15% 95%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 35 20% 93%;
-    --muted-foreground: 30 8% 50%;
+    --muted: 40 10% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 30 50% 45%;
-    --accent-foreground: 40 30% 96%;
+    --accent: 28 60% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
-    --ring: 25 45% 28%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 28 60% 48%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --hero-overlay: linear-gradient(to right, hsla(25, 45%, 15%, 0.85), hsla(25, 45%, 15%, 0.3));
-    --section-gradient: linear-gradient(180deg, hsl(40, 20%, 98%), hsl(35, 25%, 94%));
+    --hero-overlay: linear-gradient(to right, hsla(0, 0%, 5%, 0.7), hsla(0, 0%, 5%, 0.2));
+    --section-gradient: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(40, 15%, 97%));
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -50,25 +50,25 @@
   }
 
   .dark {
-    --background: 30 10% 8%;
-    --foreground: 40 20% 92%;
-    --card: 30 10% 10%;
-    --card-foreground: 40 20% 92%;
-    --popover: 30 10% 8%;
-    --popover-foreground: 40 20% 92%;
-    --primary: 30 50% 55%;
-    --primary-foreground: 30 10% 8%;
-    --secondary: 30 15% 18%;
-    --secondary-foreground: 40 20% 92%;
-    --muted: 30 10% 18%;
-    --muted-foreground: 30 10% 55%;
-    --accent: 30 50% 50%;
-    --accent-foreground: 30 10% 8%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 92%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 0 0% 92%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 92%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 28 60% 52%;
+    --accent-foreground: 0 0% 5%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 30 10% 20%;
-    --input: 30 10% 20%;
-    --ring: 30 50% 55%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 28 60% 52%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -87,11 +87,15 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Source Sans 3', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -107,21 +111,25 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .divider {
+    @apply w-12 h-px bg-accent mx-auto;
+  }
 }
 
 @layer utilities {
   .animate-fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
+    animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
   }
 
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(32px);
     }
     to {
       opacity: 1;
