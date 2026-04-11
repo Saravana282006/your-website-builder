@@ -74,7 +74,7 @@ const Contact = () => {
                 {[
                   { icon: MapPin, label: "Address", value: "123 Textile Park, Industrial Area\nCoimbatore, Tamil Nadu, India" },
                   { icon: Phone, label: "Phone", value: "+91 422 123 4567" },
-                  { icon: Mail, label: "Email", value: "info@textileco.com" },
+                  { icon: Mail, label: "Email", value: "info@mrethewndesign.com" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-5">
                     <item.icon size={20} className="text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
