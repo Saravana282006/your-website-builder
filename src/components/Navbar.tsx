@@ -18,7 +18,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-20 px-6 lg:px-12">
         <Link to="/" className="text-xl tracking-[0.2em] uppercase font-medium text-foreground">
-          Textile<span className="text-accent font-semibold">Co</span>
+          Mrethewn <span className="text-accent font-semibold">Design</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">

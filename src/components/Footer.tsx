@@ -6,7 +6,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
           <h3 className="text-xl tracking-[0.2em] uppercase font-medium text-foreground mb-6">
-            Textile<span className="text-accent font-semibold">Co</span>
+            Mrethewn <span className="text-accent font-semibold">Design</span>
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
             Your trusted production partner for premium yarn, garments, home textiles, accessories & gift articles — sourcing worldwide with a focus on design and sustainability.
@@ -46,7 +46,7 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-border mt-16 pt-8 text-center text-xs text-muted-foreground tracking-wider">
-        © {new Date().getFullYear()} TextileCo. All rights reserved.
+        © {new Date().getFullYear()} Mrethewn Design. All rights reserved.
       </div>
     </div>
   </footer>
