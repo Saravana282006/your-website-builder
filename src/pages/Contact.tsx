@@ -72,8 +72,8 @@ const Contact = () => {
               <h2 className="text-3xl font-light text-foreground mb-10">Our Information</h2>
               <div className="space-y-8">
                 {[
-                  { icon: MapPin, label: "Address", value: "123 Textile Park, Industrial Area\nCoimbatore, Tamil Nadu, India" },
-                  { icon: Phone, label: "Phone", value: "+91 422 123 4567" },
+                  { icon: MapPin, label: "Address", value: "Coimbatore, Tamil Nadu, India" },
+                  { icon: Phone, label: "Phone", value: "+91 0000000000" },
                   { icon: Mail, label: "Email", value: "info@mrethewndesign.com" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-5">
