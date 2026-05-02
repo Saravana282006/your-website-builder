@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero-main.jpg";
+import spinningImg from "@/assets/spinning-unit.jpg";
+import loomsImg from "@/assets/looms-unit.jpg";
+import stitchingImg from "@/assets/stitching-unit.jpg";
+import packingImg from "@/assets/packing-unit.jpg";
 import yarnImg from "@/assets/yarn-category.jpg";
 import garmentsImg from "@/assets/garments-category.jpg";
 import homeTextileImg from "@/assets/home-textile-category.jpg";
@@ -16,22 +20,73 @@ const categories = [
   { title: "Gift Articles", img: giftImg, desc: "Curated textile gift collections" },
 ];
 
-const Index = () => (
+const heroSlides = [
+  {
+    img: spinningImg,
+    eyebrow: "Spinning Unit",
+    title: "Premium Yarn,\nSpun with Precision",
+    desc: "High-speed ring & open-end spinning facilities producing cotton yarn across a wide range of counts.",
+  },
+  {
+    img: loomsImg,
+    eyebrow: "Weaving Looms",
+    title: "Fabrics Woven\nfor Every Need",
+    desc: "Modern looms producing diverse fabric constructions for garments, home textiles, and exports.",
+  },
+  {
+    img: stitchingImg,
+    eyebrow: "Automatic Stitching",
+    title: "Garments, Stitched\nto Perfection",
+    desc: "Automatic stitching units delivering precision, scale, and consistent quality on every order.",
+  },
+  {
+    img: packingImg,
+    eyebrow: "Packing & Dispatch",
+    title: "Ready for the\nWorld Market",
+    desc: "Organised packing and quality-checked dispatch ensuring your shipment arrives perfect, on time.",
+  },
+];
+
+const Index = () => {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % heroSlides.length), 6000);
+    return () => clearInterval(id);
+  }, []);
+
+  const go = (dir: number) =>
+    setSlide((s) => (s + dir + heroSlides.length) % heroSlides.length);
+
+  return (
   <Layout>
-    {/* Hero — full viewport, minimal */}
-    <section className="relative h-screen flex items-center">
-      <img src={heroImg} alt="Textile manufacturing" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 hero-overlay" />
-      <div className="relative container mx-auto px-6 lg:px-12">
-        <div className="max-w-2xl animate-fade-up">
+    {/* Hero — sliding carousel of manufacturing units */}
+    <section className="relative h-screen overflow-hidden">
+      {heroSlides.map((s, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 transition-opacity duration-1000 ${i === slide ? "opacity-100" : "opacity-0"}`}
+        >
+          <img
+            src={s.img}
+            alt={s.eyebrow}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading={i === 0 ? "eager" : "lazy"}
+          />
+          <div className="absolute inset-0 hero-overlay" />
+        </div>
+      ))}
+
+      <div className="relative container mx-auto px-6 lg:px-12 h-full flex items-center">
+        <div key={slide} className="max-w-2xl animate-fade-up">
           <p className="text-[13px] tracking-[0.3em] uppercase mb-6 font-medium" style={{ color: 'hsl(0, 0%, 70%)' }}>
-            Your Trusted Production Partner
+            {heroSlides[slide].eyebrow}
           </p>
-          <h1 className="text-5xl md:text-7xl font-light leading-[1.1] mb-8" style={{ color: 'hsl(0, 0%, 98%)' }}>
-            Premium Textiles,<br />Crafted with Purpose
+          <h1 className="text-5xl md:text-7xl font-light leading-[1.1] mb-8 whitespace-pre-line" style={{ color: 'hsl(0, 0%, 98%)' }}>
+            {heroSlides[slide].title}
           </h1>
           <p className="text-base leading-relaxed mb-10 max-w-md font-light" style={{ color: 'hsl(0, 0%, 75%)' }}>
-            From yarn to finished products — delivering quality garments, home textiles, and accessories to clients worldwide.
+            {heroSlides[slide].desc}
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -49,6 +104,32 @@ const Index = () => (
             </Link>
           </div>
         </div>
+      </div>
+
+      <button
+        onClick={() => go(-1)}
+        aria-label="Previous slide"
+        className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-10 p-3 border border-white/30 hover:bg-white/10 transition-colors text-white"
+      >
+        <ChevronLeft size={18} />
+      </button>
+      <button
+        onClick={() => go(1)}
+        aria-label="Next slide"
+        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-10 p-3 border border-white/30 hover:bg-white/10 transition-colors text-white"
+      >
+        <ChevronRight size={18} />
+      </button>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+        {heroSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setSlide(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-1 transition-all duration-500 ${i === slide ? "w-10 bg-accent" : "w-6 bg-white/40 hover:bg-white/70"}`}
+          />
+        ))}
       </div>
     </section>
 
@@ -113,6 +194,7 @@ const Index = () => (
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default Index;
