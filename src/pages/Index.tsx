@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero-main.jpg";
+import spinningImg from "@/assets/spinning-unit.jpg";
+import loomsImg from "@/assets/looms-unit.jpg";
+import stitchingImg from "@/assets/stitching-unit.jpg";
+import packingImg from "@/assets/packing-unit.jpg";
 import yarnImg from "@/assets/yarn-category.jpg";
 import garmentsImg from "@/assets/garments-category.jpg";
 import homeTextileImg from "@/assets/home-textile-category.jpg";
