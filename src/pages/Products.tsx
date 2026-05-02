@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 import Layout from "@/components/Layout";
 import yarnImg from "@/assets/yarn-category.jpg";
 import garmentsImg from "@/assets/garments-category.jpg";
@@ -6,46 +7,88 @@ import homeTextileImg from "@/assets/home-textile-category.jpg";
 import accessoriesImg from "@/assets/accessories-category.jpg";
 import giftImg from "@/assets/gift-articles-category.jpg";
 
-const products = [
+type SubItem = { label: string; detail: string };
+type Product = {
+  id: string;
+  title: string;
+  tag?: string;
+  img: string;
+  desc: string;
+  details: SubItem[];
+};
+
+const products: Product[] = [
   {
     id: "yarn",
     title: "Yarn",
+    tag: "Sourcing Agent",
     img: yarnImg,
-    desc: "We manufacture premium cotton yarn across a wide range of counts and fibre types. Our spinning facilities produce yarn on cones for weaving, knitting, and export markets.",
-    details: ["Types of Cotton", "Multiple Fibre Types", "Wide Range of Counts", "Cone & Hank Packaging"],
+    desc: "As a trusted sourcing agent, we connect global buyers with the finest yarn producers. From raw cotton selection to count-specific sourcing, we manage quality, pricing, and timely delivery on your behalf.",
+    details: [
+      { label: "Types of Cotton", detail: "Pima, Giza, Supima, Egyptian, Indian Shankar-6, US Upland and organic certified cotton — sourced based on staple length, micronaire, and end-use." },
+      { label: "Multiple Fibre Types", detail: "100% Cotton, Polyester, Viscose, Modal, Linen, Bamboo, and blended fibres including PC, CVC, and tri-blends to suit knitting and weaving needs." },
+      { label: "Wide Range of Counts", detail: "Carded, combed and compact yarns from Ne 6s to Ne 120s — single and double, in ring-spun, open-end and vortex variants." },
+      { label: "Cone & Hank Packaging", detail: "Standard cone weights (1.89kg / 2.08kg), dye-tube packing, and hank packing for handloom and dyeing applications. Export-grade carton packing available." },
+    ],
   },
   {
     id: "garments",
     title: "Garments",
     img: garmentsImg,
     desc: "A complete range of garments for men, women, boys, and girls — including performance sportswear, workwear, and everyday essentials.",
-    details: ["Men's Wear", "Women's Wear", "Boys & Girls", "Sportswear", "Workwear"],
+    details: [
+      { label: "Men's Wear", detail: "T-shirts, polos, shirts, trousers, denim, jackets and innerwear — woven and knitted constructions across casual and formal segments." },
+      { label: "Women's Wear", detail: "Tops, blouses, dresses, kurtas, leggings, loungewear and ethnic fusion wear — designed for global fashion markets." },
+      { label: "Boys & Girls", detail: "Kidswear from infants to teens — playful prints, soft fabrics, safety-tested trims and OEKO-TEX compliant dyes." },
+      { label: "Sportswear", detail: "Performance tees, joggers, track suits and yoga wear in moisture-wicking, anti-microbial and stretch fabrics." },
+      { label: "Workwear", detail: "Industrial uniforms, coveralls, hi-vis jackets and chef wear in durable cotton, poly-cotton and FR fabrics." },
+    ],
   },
   {
     id: "home-textile",
     title: "Home Textile",
     img: homeTextileImg,
     desc: "Beautifully crafted home textile products designed for comfort and style. From bedroom to kitchen, our collection enhances every space.",
-    details: ["Table Linen", "Kitchen Linen", "Bed Linen", "Cushions", "Curtains", "Bath Linen"],
+    details: [
+      { label: "Table Linen", detail: "Tablecloths, runners, napkins and placemats in jacquard, yarn-dyed and printed cotton/linen blends." },
+      { label: "Kitchen Linen", detail: "Aprons, oven mitts, pot holders and tea towels — woven and terry constructions, fully customisable." },
+      { label: "Bed Linen", detail: "Bed sheets, duvet covers, pillow cases and quilts in 200–600 thread count percale, sateen and printed cotton." },
+      { label: "Cushions", detail: "Cushion covers and filled cushions in embroidered, printed, woven and knitted designs for sofa and outdoor use." },
+      { label: "Curtains", detail: "Sheer, blackout, eyelet and tab-top curtains in linen, cotton and synthetic blends — custom sizing supported." },
+      { label: "Bath Linen", detail: "Bath, hand and face towels, bath mats and robes in 400–700 GSM combed cotton and zero-twist constructions." },
+    ],
   },
   {
     id: "accessories",
     title: "Accessories",
     img: accessoriesImg,
     desc: "Premium textile accessories crafted with attention to detail — from luxurious pashmina shawls to elegant scarves and leather wallets.",
-    details: ["Shawl", "Pashmina", "Scarf", "Wallet"],
+    details: [
+      { label: "Shawl", detail: "Woven and embroidered shawls in wool, cotton and silk blends — traditional and contemporary designs." },
+      { label: "Pashmina", detail: "Authentic Kashmiri pashmina in 100% cashmere and silk-pashmina blends, hand-woven and hand-embroidered." },
+      { label: "Scarf", detail: "Lightweight cotton, silk and modal scarves in printed, dyed and yarn-dyed constructions." },
+      { label: "Wallet", detail: "Genuine leather and fabric wallets in classic and modern styles, with custom branding options." },
+    ],
   },
   {
     id: "gift-articles",
     title: "Gift Articles",
     img: giftImg,
     desc: "Curated textile gift collections perfect for corporate gifting, festive occasions, and special events.",
-    details: ["Corporate Gifts", "Festive Collections", "Custom Packaging", "Combo Sets"],
+    details: [
+      { label: "Corporate Gifts", detail: "Branded textile hampers — towels, robes, scarves and stationery sets with custom logo embroidery and printing." },
+      { label: "Festive Collections", detail: "Themed gift sets for Diwali, Christmas, Eid and other occasions in premium packaging." },
+      { label: "Custom Packaging", detail: "Bespoke gift boxes, ribbons, tags and inserts — fully designed to match your brand identity." },
+      { label: "Combo Sets", detail: "Curated bundles combining home textiles, accessories and lifestyle products for a complete gifting experience." },
+    ],
   },
 ];
 
 const Products = () => {
   const [active, setActive] = useState<string | null>(null);
+  const [openItem, setOpenItem] = useState<string | null>(null);
+
+  const toggle = (key: string) => setOpenItem((cur) => (cur === key ? null : key));
 
   return (
     <Layout>
@@ -89,8 +132,8 @@ const Products = () => {
             className={`py-24 ${i % 2 === 1 ? "section-gradient" : ""}`}
           >
             <div className="container mx-auto px-6 lg:px-12">
-              <div className={`flex flex-col lg:flex-row gap-16 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-                <div className="lg:w-1/2">
+              <div className={`flex flex-col lg:flex-row gap-16 items-start ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
+                <div className="lg:w-1/2 lg:sticky lg:top-32">
                   <img
                     src={p.img}
                     alt={p.title}
@@ -100,14 +143,47 @@ const Products = () => {
                 </div>
                 <div className="lg:w-1/2">
                   <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">{String(i + 1).padStart(2, '0')}</p>
-                  <h2 className="text-3xl font-light text-foreground mb-5">{p.title}</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-8">{p.desc}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {p.details.map((d) => (
-                      <span key={d} className="border border-border text-muted-foreground px-4 py-2 text-[13px] tracking-wide">
-                        {d}
+                  <div className="flex items-baseline gap-4 mb-5 flex-wrap">
+                    <h2 className="text-3xl font-light text-foreground">{p.title}</h2>
+                    {p.tag && (
+                      <span className="text-[11px] tracking-[0.2em] uppercase text-accent border border-accent/40 px-3 py-1">
+                        {p.tag}
                       </span>
-                    ))}
+                    )}
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-8">{p.desc}</p>
+
+                  {/* Sub-clauses — click to expand */}
+                  <div className="border-t border-border">
+                    {p.details.map((d) => {
+                      const key = `${p.id}-${d.label}`;
+                      const isOpen = openItem === key;
+                      return (
+                        <div key={d.label} className="border-b border-border">
+                          <button
+                            onClick={() => toggle(key)}
+                            className="w-full flex items-center justify-between py-4 text-left group"
+                            aria-expanded={isOpen}
+                          >
+                            <span className={`text-[13px] tracking-[0.1em] uppercase transition-colors ${isOpen ? "text-accent" : "text-foreground group-hover:text-accent"}`}>
+                              {d.label}
+                            </span>
+                            <span className={`transition-colors ${isOpen ? "text-accent" : "text-muted-foreground"}`}>
+                              {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                            </span>
+                          </button>
+                          <div
+                            className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"}`}
+                          >
+                            <div className="overflow-hidden">
+                              <p className="text-muted-foreground text-sm leading-relaxed pr-8">
+                                {d.detail}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
