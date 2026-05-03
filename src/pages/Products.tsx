@@ -5,6 +5,7 @@ import yarnImg from "@/assets/yarn-category.jpg";
 import garmentsImg from "@/assets/garments-category.jpg";
 import homeTextileImg from "@/assets/home-textile-category.jpg";
 import accessoriesImg from "@/assets/accessories-category.jpg";
+import productsHeroImg from "@/assets/products-hero.jpg";
 
 
 type SubItem = { label: string; detail: string };
@@ -81,12 +82,14 @@ const Products = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-foreground py-28">
-        <div className="container mx-auto px-6 lg:px-12 text-center">
-          <p className="text-[13px] tracking-[0.3em] uppercase mb-4" style={{ color: 'hsl(0, 0%, 55%)' }}>Our Range</p>
+      <section className="relative h-[55vh] min-h-[420px] flex items-center">
+        <img src={productsHeroImg} alt="Premium textile products" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="relative container mx-auto px-6 lg:px-12 text-center">
+          <p className="text-[13px] tracking-[0.3em] uppercase mb-4" style={{ color: 'hsl(0, 0%, 75%)' }}>Our Range</p>
           <h1 className="text-4xl md:text-6xl font-light mb-4" style={{ color: 'hsl(0, 0%, 98%)' }}>Products</h1>
-          <p className="font-light max-w-md mx-auto" style={{ color: 'hsl(0, 0%, 55%)' }}>
-            Five verticals spanning the complete textile value chain
+          <p className="font-light max-w-md mx-auto" style={{ color: 'hsl(0, 0%, 80%)' }}>
+            Four verticals spanning the complete textile sourcing value chain
           </p>
         </div>
       </section>
