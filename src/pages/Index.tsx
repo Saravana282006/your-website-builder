@@ -10,14 +10,12 @@ import yarnImg from "@/assets/yarn-category.jpg";
 import garmentsImg from "@/assets/garments-category.jpg";
 import homeTextileImg from "@/assets/home-textile-category.jpg";
 import accessoriesImg from "@/assets/accessories-category.jpg";
-import giftImg from "@/assets/gift-articles-category.jpg";
 
 const categories = [
   { title: "Yarn", img: yarnImg, desc: "Premium cotton yarn in various counts" },
   { title: "Garments", img: garmentsImg, desc: "Men's, women's & children's apparel" },
   { title: "Home Textile", img: homeTextileImg, desc: "Bed linen, curtains & cushions" },
   { title: "Accessories", img: accessoriesImg, desc: "Shawls, pashmina & scarves" },
-  { title: "Gift Articles", img: giftImg, desc: "Curated textile gift collections" },
 ];
 
 const heroSlides = [

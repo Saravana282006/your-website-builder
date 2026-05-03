@@ -30,7 +30,7 @@ const About = () => (
       <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center">
         <div className="divider mb-8" />
         <p className="text-muted-foreground leading-[1.9] text-base mb-6">
-          We are a comprehensive textile company spanning the full value chain — from yarn manufacturing to finished garments, home textiles, accessories, and curated gift articles.
+          We are a comprehensive textile company spanning the full value chain — from yarn sourcing to finished garments, home textiles and accessories.
         </p>
         <p className="text-muted-foreground leading-[1.9] text-base">
           With a strong foundation in quality and design, we serve clients worldwide as a reliable production partner. Our commitment to sustainability, innovative design, and manufacturing excellence sets us apart in the global textile landscape.

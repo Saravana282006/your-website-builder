@@ -9,7 +9,7 @@ const Footer = () => (
             Mrethewn <span className="text-accent font-semibold">Design</span>
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-            Your trusted production partner for premium yarn, garments, home textiles, accessories & gift articles — sourcing worldwide with a focus on design and sustainability.
+            Your trusted sourcing partner for premium yarn, garments, home textiles and accessories — sourcing worldwide with a focus on design and sustainability.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ const Footer = () => (
         <div>
           <h4 className="text-[13px] tracking-[0.15em] uppercase text-foreground mb-6">Products</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            {["Yarn", "Garments", "Home Textile", "Accessories", "Gift Articles"].map((c) => (
+            {["Yarn", "Garments", "Home Textile", "Accessories"].map((c) => (
               <li key={c}>
                 <Link to="/products" className="hover:text-foreground transition-colors duration-300">
                   {c}
