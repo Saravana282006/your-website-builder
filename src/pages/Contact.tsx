@@ -48,7 +48,7 @@ const Contact = () => {
                   <option>Garments</option>
                   <option>Home Textile</option>
                   <option>Accessories</option>
-                  <option>Gift Articles</option>
+                  
                 </select>
                 <textarea
                   required

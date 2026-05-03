@@ -5,7 +5,7 @@ import yarnImg from "@/assets/yarn-category.jpg";
 import garmentsImg from "@/assets/garments-category.jpg";
 import homeTextileImg from "@/assets/home-textile-category.jpg";
 import accessoriesImg from "@/assets/accessories-category.jpg";
-import giftImg from "@/assets/gift-articles-category.jpg";
+
 
 type SubItem = { label: string; detail: string };
 type Product = {
@@ -68,18 +68,6 @@ const products: Product[] = [
       { label: "Pashmina", detail: "Authentic Kashmiri pashmina in 100% cashmere and silk-pashmina blends, hand-woven and hand-embroidered." },
       { label: "Scarf", detail: "Lightweight cotton, silk and modal scarves in printed, dyed and yarn-dyed constructions." },
       { label: "Wallet", detail: "Genuine leather and fabric wallets in classic and modern styles, with custom branding options." },
-    ],
-  },
-  {
-    id: "gift-articles",
-    title: "Gift Articles",
-    img: giftImg,
-    desc: "Curated textile gift collections perfect for corporate gifting, festive occasions, and special events.",
-    details: [
-      { label: "Corporate Gifts", detail: "Branded textile hampers — towels, robes, scarves and stationery sets with custom logo embroidery and printing." },
-      { label: "Festive Collections", detail: "Themed gift sets for Diwali, Christmas, Eid and other occasions in premium packaging." },
-      { label: "Custom Packaging", detail: "Bespoke gift boxes, ribbons, tags and inserts — fully designed to match your brand identity." },
-      { label: "Combo Sets", detail: "Curated bundles combining home textiles, accessories and lifestyle products for a complete gifting experience." },
     ],
   },
 ];
