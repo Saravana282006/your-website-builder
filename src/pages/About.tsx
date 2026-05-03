@@ -1,21 +1,21 @@
 import { Globe, Award, Palette, Leaf, Handshake, Star } from "lucide-react";
 import Layout from "@/components/Layout";
-import sustainabilityImg from "@/assets/sustainability.jpg";
+import cottonFieldsImg from "@/assets/cotton-fields.jpg";
 
 const strengths = [
   { icon: Globe, title: "Worldwide Sourcing", desc: "Finest raw materials sourced globally, ensuring consistent quality and competitive pricing." },
   { icon: Star, title: "Premium Quality", desc: "Rigorous quality control at every stage — from raw fibre to finished product." },
-  { icon: Award, title: "Manufacturing Excellence", desc: "Decades of expertise, state-of-the-art infrastructure, and a skilled workforce." },
+  { icon: Award, title: "Manufacturing Excellence", desc: "State-of-the-art partner facilities and a skilled, experienced workforce." },
   { icon: Palette, title: "Design Focus", desc: "In-house design team creating trend-forward products for global markets." },
   { icon: Leaf, title: "Sustainability", desc: "Certified sustainable sourcing and eco-friendly manufacturing practices." },
-  { icon: Handshake, title: "Trusted Partner", desc: "Reliable, scalable, and quality-driven B2B production partnership." },
+  { icon: Handshake, title: "Sourcing Partner", desc: "Reliable, scalable, and quality-driven B2B sourcing partnership." },
 ];
 
 const About = () => (
   <Layout>
     {/* Hero */}
     <section className="relative h-[60vh] min-h-[500px] flex items-center">
-      <img src={sustainabilityImg} alt="Cotton fields" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={cottonFieldsImg} alt="Cotton fields at sunrise" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 hero-overlay" />
       <div className="relative container mx-auto px-6 lg:px-12">
         <div className="max-w-xl animate-fade-up">
@@ -30,10 +30,13 @@ const About = () => (
       <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center">
         <div className="divider mb-8" />
         <p className="text-muted-foreground leading-[1.9] text-base mb-6">
-          We are a comprehensive textile company spanning the full value chain — from yarn sourcing to finished garments, home textiles and accessories.
+          Mrethewn Design is a global textile sourcing house connecting international buyers with carefully selected manufacturing partners across the value chain — from yarn and fabric to finished garments, home textiles and accessories.
+        </p>
+        <p className="text-muted-foreground leading-[1.9] text-base mb-6">
+          We work as an extension of our clients' teams — handling supplier selection, quality control, compliance, sampling, production follow-up and on-time shipments. Our strength lies in trusted relationships, clean processes and an obsession with consistency.
         </p>
         <p className="text-muted-foreground leading-[1.9] text-base">
-          With a strong foundation in quality and design, we serve clients worldwide as a reliable production partner. Our commitment to sustainability, innovative design, and manufacturing excellence sets us apart in the global textile landscape.
+          Built on decades of textile expertise, we serve clients worldwide as a reliable sourcing partner — pairing design sensibility with disciplined execution.
         </p>
       </div>
     </section>

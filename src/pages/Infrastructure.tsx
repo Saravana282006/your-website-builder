@@ -1,18 +1,24 @@
 import Layout from "@/components/Layout";
 import heroImg from "@/assets/infrastructure-hero.jpg";
-import heroMainImg from "@/assets/hero-main.jpg";
+import weavingImg from "@/assets/weaving-unit.jpg";
+import godownImg from "@/assets/godown-unit.jpg";
+import stitchingImg from "@/assets/stitching-unit.jpg";
+import packingImg from "@/assets/packing-unit.jpg";
+import qualityImg from "@/assets/quality-lab.jpg";
 
 const stats = [
-  { label: "Spindles", value: "50,000+", desc: "High-speed ring & open-end" },
-  { label: "Daily Output", value: "25 Tons", desc: "Daily yarn production" },
+  { label: "Daily Output", value: "25 Tons", desc: "Across partner facilities" },
   { label: "Looms", value: "200+", desc: "Modern weaving machines" },
-  { label: "Facility", value: "2,00,000 sq ft", desc: "Manufacturing space" },
+  { label: "Stitching Lines", value: "40+", desc: "Automated cut-to-pack lines" },
+  { label: "Facility", value: "2,00,000 sq ft", desc: "Manufacturing & warehousing" },
 ];
 
 const facilities = [
-  { title: "Spinning Mill", img: heroMainImg, desc: "State-of-the-art spinning facility with automated ring frames and open-end spinning systems." },
-  { title: "Weaving Unit", img: heroImg, desc: "Modern weaving floor equipped with high-speed looms for diverse fabric constructions." },
-  { title: "Godown & Warehousing", img: heroMainImg, desc: "Climate-controlled warehousing ensuring product quality from production to dispatch." },
+  { title: "Weaving Unit", img: weavingImg, desc: "Modern weaving floor equipped with high-speed looms producing diverse fabric constructions for apparel and home textile." },
+  { title: "Stitching Unit", img: stitchingImg, desc: "Automated cut-to-pack stitching lines with skilled operators delivering consistent quality at scale." },
+  { title: "Packing Unit", img: packingImg, desc: "Dedicated packing floor for retail-ready folding, tagging, polybagging and carton packing to client specs." },
+  { title: "Quality Lab", img: qualityImg, desc: "In-house QA & inspection — fabric, fit, colour and compliance checks at every production stage." },
+  { title: "Godown & Warehousing", img: godownImg, desc: "Climate-controlled warehousing ensuring product quality from production through to dispatch." },
 ];
 
 const Infrastructure = () => (
@@ -51,7 +57,7 @@ const Infrastructure = () => (
           <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">Facilities</p>
           <h2 className="text-3xl md:text-4xl font-light text-foreground">Our Manufacturing Units</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {facilities.map((f) => (
             <div key={f.title} className="group">
               <div className="overflow-hidden mb-6">
