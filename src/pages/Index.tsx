@@ -152,12 +152,12 @@ const Index = () => {
           <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">Products</p>
           <h2 className="text-3xl md:text-4xl font-light text-foreground">Our Product Range</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {categories.map((cat, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {categories.map((cat) => (
             <Link
               key={cat.title}
               to="/products"
-              className={`group relative overflow-hidden ${i === 0 ? "sm:col-span-2 lg:col-span-2 h-96" : "h-80"}`}
+              className="group relative overflow-hidden h-80"
             >
               <img
                 src={cat.img}
