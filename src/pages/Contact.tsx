@@ -72,7 +72,7 @@ const Contact = () => {
               <h2 className="text-3xl font-light text-foreground mb-10">Our Information</h2>
               <div className="space-y-8">
                 {[
-                  { icon: MapPin, label: "Address", value: "Coimbatore, Tamil Nadu, India" },
+                  { icon: MapPin, label: "Address", value: "8/148, Padavattamman Kovil Street,\nKovalam, ECR,\nChennai, Tamil Nadu, India\nPin 603112" },
                   { icon: Phone, label: "Phone", value: "+91 0000000000" },
                   { icon: Mail, label: "Email", value: "info@mrethewndesign.com" },
                 ].map((item) => (
