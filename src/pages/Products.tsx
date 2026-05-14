@@ -38,7 +38,7 @@ const products: Product[] = [
     img: garmentsImg,
     desc: "A complete range of garments for men, women, boys, and girls — including performance sportswear, workwear, and everyday essentials.",
     details: [
-      { label: "Men's Wear", detail: "T-shirts, polos, shirts, trousers, denim, jackets and innerwear — woven and knitted constructions across casual and formal segments." },
+      { label: "Men's Wear", detail: "T-shirts, polos, shirts, trousers, denim, jackets, innerwear and nightwear — woven and knitted constructions across casual, formal and loungewear segments." },
       { label: "Women's Wear", detail: "Tops, blouses, dresses, kurtas, leggings, loungewear and ethnic fusion wear — designed for global fashion markets." },
       { label: "Boys & Girls", detail: "Kidswear from infants to teens — playful prints, soft fabrics, safety-tested trims and OEKO-TEX compliant dyes." },
       { label: "Sportswear", detail: "Performance tees, joggers, track suits and yoga wear in moisture-wicking, anti-microbial and stretch fabrics." },
