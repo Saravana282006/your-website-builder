@@ -29,7 +29,7 @@ const products: Product[] = [
       { label: "Types of Cotton", detail: "Pima, Giza, Supima, Egyptian, Indian Shankar-6, US Upland and organic certified cotton — sourced based on staple length, micronaire, and end-use." },
       { label: "Multiple Fibre Types", detail: "100% Cotton, Polyester, Viscose, Modal, Linen, Bamboo, and blended fibres including PC, CVC, and tri-blends to suit knitting and weaving needs." },
       { label: "Wide Range of Counts", detail: "Carded, combed and compact yarns from Ne 6s to Ne 120s — single and double, in ring-spun, open-end and vortex variants." },
-      { label: "Cone & Hank Packaging", detail: "Standard cone weights (1.89kg / 2.08kg), dye-tube packing, and hank packing for handloom and dyeing applications. Export-grade carton packing available." },
+      { label: "Cone & Pallet Packaging", detail: "Cone weights customised as per client requirements. Dye-tube packing, pallet packing, and export-grade carton packing available." },
     ],
   },
   {
