@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3 mb-6">
-            <img src={logo} alt="Mrethewn Design logo" loading="lazy" width={48} height={48} className="h-12 w-12 object-contain" />
+            <img src={logo} alt="Mrethewn Design logo" loading="lazy" width={48} height={48} className="h-12 w-12 object-contain rounded-full bg-background ring-1 ring-border p-1 [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.18))]" />
             <h3 className="text-xl tracking-[0.2em] uppercase font-medium text-foreground">
               Mrethewn <span className="text-accent font-semibold">Design</span>
             </h3>
