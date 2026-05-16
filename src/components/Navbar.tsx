@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto flex items-center justify-between h-20 px-6 lg:px-12">
+      <div className="container mx-auto flex items-center justify-between h-24 px-6 lg:px-12">
         <Link to="/" className="flex items-center gap-3" aria-label="Mrethewn Design — Home">
           <img src={logo} alt="Mrethewn Design logo" width={64} height={64} className="h-14 w-14 object-contain" />
           <span className="text-xl tracking-[0.2em] uppercase font-medium text-foreground hidden sm:inline">
