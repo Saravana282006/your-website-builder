@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="border-t border-border">
     <div className="container mx-auto px-6 lg:px-12 py-20">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
-          <h3 className="text-xl tracking-[0.2em] uppercase font-medium text-foreground mb-6">
-            Mrethewn <span className="text-accent font-semibold">Design</span>
-          </h3>
+          <div className="flex items-center gap-3 mb-6">
+            <img src={logo} alt="Mrethewn Design logo" loading="lazy" width={48} height={48} className="h-12 w-12 object-contain" />
+            <h3 className="text-xl tracking-[0.2em] uppercase font-medium text-foreground">
+              Mrethewn <span className="text-accent font-semibold">Design</span>
+            </h3>
+          </div>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
             Your trusted sourcing partner for premium yarn, garments, home textiles and accessories — sourcing worldwide with a focus on design and sustainability.
           </p>
