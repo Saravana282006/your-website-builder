@@ -73,8 +73,8 @@ const Contact = () => {
               <div className="space-y-8">
                 {[
                   { icon: MapPin, label: "Address", value: "8/148, Padavattamman Kovil Street,\nKovalam, ECR,\nChennai, Tamil Nadu, India\nPin 603112" },
-                  { icon: Phone, label: "Phone", value: "+91 0000000000" },
-                  { icon: Mail, label: "Email", value: "info@mrethewndesign.com" },
+                  { icon: Phone, label: "Phone", value: "+91 8925768135" },
+                  { icon: Mail, label: "Email", value: "mrethewn.design@gmail.com" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-5">
                     <item.icon size={20} className="text-accent flex-shrink-0 mt-0.5" strokeWidth={1.5} />
