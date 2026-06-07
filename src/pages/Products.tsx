@@ -165,16 +165,14 @@ const Products = () => {
               <div className="max-w-3xl mx-auto text-center">
                 <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">{String(i + 1).padStart(2, '0')}</p>
                 <div className="flex items-baseline gap-4 mb-5 flex-wrap justify-center">
-                  <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">{String(i + 1).padStart(2, '0')}</p>
-                  <div className="flex items-baseline gap-4 mb-5 flex-wrap">
-                    <h2 className="text-3xl font-light text-foreground">{p.title}</h2>
-                    {p.tag && (
-                      <span className="text-[11px] tracking-[0.2em] uppercase text-accent border border-accent/40 px-3 py-1">
-                        {p.tag}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed mb-8">{p.desc}</p>
+                  <h2 className="text-3xl font-light text-foreground">{p.title}</h2>
+                  {p.tag && (
+                    <span className="text-[11px] tracking-[0.2em] uppercase text-accent border border-accent/40 px-3 py-1">
+                      {p.tag}
+                    </span>
+                  )}
+                </div>
+                <p className="text-muted-foreground leading-relaxed mb-8">{p.desc}</p>
 
                   {/* Sub-clauses — click to expand */}
                   <div className="border-t border-border">
