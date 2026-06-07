@@ -40,6 +40,11 @@ const products: Product[] = [
     id: "garments",
     title: "Garments",
     img: garmentsImg,
+    gallery: [
+      { src: garmentsKidsImg, label: "Kids" },
+      { src: garmentsLadiesImg, label: "Ladies" },
+      { src: garmentsMensImg, label: "Men's" },
+    ],
     desc: "A complete range of garments for men, women, boys, and girls — including performance sportswear, workwear, and everyday essentials.",
     details: [
       { label: "Men's Wear", detail: "T-shirts, polos, shirts, trousers, denim, jackets, innerwear and nightwear — woven and knitted constructions across casual, formal and loungewear segments." },
