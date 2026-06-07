@@ -3,6 +3,9 @@ import { Plus, Minus } from "lucide-react";
 import Layout from "@/components/Layout";
 import yarnImg from "@/assets/yarn-category.jpg";
 import garmentsImg from "@/assets/garments-category.jpg";
+import garmentsKidsImg from "@/assets/garments-kids.jpg";
+import garmentsLadiesImg from "@/assets/garments-ladies.jpg";
+import garmentsMensImg from "@/assets/garments-mens.jpg";
 import homeTextileImg from "@/assets/home-textile-category.jpg";
 import accessoriesImg from "@/assets/accessories-category.jpg";
 import productsHeroImg from "@/assets/products-hero.jpg";
@@ -14,6 +17,7 @@ type Product = {
   title: string;
   tag?: string;
   img: string;
+  gallery?: { src: string; label: string }[];
   desc: string;
   details: SubItem[];
 };
