@@ -132,16 +132,39 @@ const Products = () => {
             className={`py-24 ${i % 2 === 1 ? "section-gradient" : ""}`}
           >
             <div className="container mx-auto px-6 lg:px-12">
-              <div className={`flex flex-col lg:flex-row gap-16 items-start ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-                <div className="lg:w-1/2 lg:sticky lg:top-32">
+              {/* Large centered image / gallery */}
+              <div className="max-w-5xl mx-auto mb-14">
+                {p.gallery ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {p.gallery.map((g) => (
+                      <figure key={g.label} className="group">
+                        <div className="overflow-hidden">
+                          <img
+                            src={g.src}
+                            alt={`${p.title} — ${g.label}`}
+                            loading="lazy"
+                            className="w-full h-[28rem] object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        </div>
+                        <figcaption className="text-center text-[12px] tracking-[0.2em] uppercase text-muted-foreground mt-3">
+                          {g.label}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                ) : (
                   <img
                     src={p.img}
                     alt={p.title}
                     loading="lazy"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-[32rem] object-cover"
                   />
-                </div>
-                <div className="lg:w-1/2">
+                )}
+              </div>
+
+              <div className="max-w-3xl mx-auto text-center">
+                <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">{String(i + 1).padStart(2, '0')}</p>
+                <div className="flex items-baseline gap-4 mb-5 flex-wrap justify-center">
                   <p className="text-[13px] tracking-[0.3em] uppercase text-accent mb-4">{String(i + 1).padStart(2, '0')}</p>
                   <div className="flex items-baseline gap-4 mb-5 flex-wrap">
                     <h2 className="text-3xl font-light text-foreground">{p.title}</h2>
