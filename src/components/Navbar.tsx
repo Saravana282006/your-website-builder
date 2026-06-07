@@ -19,7 +19,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-24 px-6 lg:px-12">
         <Link to="/" className="flex items-center gap-3" aria-label="Mrethewn Design — Home">
-          <img src={logo} alt="Mrethewn Design logo" width={64} height={64} className="h-14 w-14 object-contain rounded-full bg-background ring-1 ring-border p-1 [filter:drop-shadow(0_2px_6px_hsl(var(--foreground)/0.18))]" />
+          <img src={logo} alt="Mrethewn Design logo" width={80} height={80} className="h-16 w-16 object-contain [filter:drop-shadow(0_3px_10px_hsl(var(--foreground)/0.28))_contrast(1.15)_saturate(1.15)]" />
           <span className="text-xl tracking-[0.2em] uppercase font-medium text-foreground hidden sm:inline">
             Mrethewn <span className="text-accent font-semibold">Design</span>
           </span>
