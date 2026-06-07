@@ -5,6 +5,7 @@ import godownImg from "@/assets/godown-unit.jpg";
 import stitchingImg from "@/assets/stitching-unit.jpg";
 import packingImg from "@/assets/packing-unit.jpg";
 import qualityImg from "@/assets/quality-lab.jpg";
+import cartonImg from "@/assets/carton-storage.jpg";
 
 const stats = [
   { label: "Daily Output", value: "25 Tons", desc: "Across partner facilities" },
@@ -19,6 +20,7 @@ const facilities = [
   { title: "Packing Unit", img: packingImg, desc: "Dedicated packing floor for retail-ready folding, tagging, polybagging and carton packing to client specs." },
   { title: "Quality Lab", img: qualityImg, desc: "In-house QA & inspection — fabric, fit, colour and compliance checks at every production stage." },
   { title: "Godown & Warehousing", img: godownImg, desc: "Climate-controlled warehousing ensuring product quality from production through to dispatch." },
+  { title: "Carton Storage", img: cartonImg, desc: "Export-ready carton storage facility with organised pallet stacking, batch tracking and dispatch staging for global shipments." },
 ];
 
 const Infrastructure = () => (
